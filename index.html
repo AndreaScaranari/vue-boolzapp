@@ -24,11 +24,11 @@
 <body>
     <div id="root">
         <main>
-            <div class="contacts-area bordered">
+            <div class="contacts-area">
                 <!-- header dell'area contatti -->
-                <div class="area-header bordered">
+                <div class="area-header">
                     <div class="user-info">
-                        <img src="assets/img/avatar_io.jpg" alt="User Pic" class="rounded-circle">
+                        <img src="assets/img/avatar_io.jpg" alt="User Pic">
                         <p>Nome Utente</p>
                     </div>
                     <div class="icons-set">
@@ -38,21 +38,59 @@
                     </div>
                 </div>
                 <!-- attiva notifiche desktop -->
-                <div class="desktop-notifications bordered">
+                <div class="desktop-notifications">
                     <i class="fa-solid fa-bell-slash"></i>
                     <div class="notification-paragraphs">
                         <p>Ricevi notifiche di nuovi messaggi</p>
                         <p class="dark-grey">Attiva notifiche desktop</p>
                     </div>
                 </div>
-                <div class="searchbar-chat bordered"></div>
-                <div class="contacts"></div>
+                <!-- searchbar per le chat -->
+                <div class="searchbar-chat">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-magnifying-glass dark-grey"></i>
+                        </span>
+                        <input type="text" class="form-control dark-grey" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <!-- elenco contatti con imgs -->
+                <div class="contacts">
+                    <div class="contact-card d-flex">
+                        <img src="assets/img/avatar_1.jpg" alt="Contact's Pic">
+                        <div>
+                            <p class="contact-name">Contact Name</p>
+                            <p class="dark-grey">Last time online</p>
+                        </div>
+                    </div>
+                    <div class="contact-card d-flex">
+                        <img src="assets/img/avatar_2.jpg" alt="Contact's Pic">
+                        <div>
+                            <p class="contact-name">Contact Name</p>
+                            <p class="dark-grey">Last time online</p>
+                        </div>
+                    </div>
+                    <div class="contact-card d-flex">
+                        <img src="assets/img/avatar_3.jpg" alt="Contact's Pic">
+                        <div>
+                            <p class="contact-name">Contact Name</p>
+                            <p class="dark-grey">Last time online</p>
+                        </div>
+                    </div>
+                    <div class="contact-card d-flex">
+                        <img src="assets/img/avatar_4.jpg" alt="Contact's Pic">
+                        <div>
+                            <p class="contact-name">Contact Name</p>
+                            <p class="dark-grey">Last time online</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="chatting-area bordered">
+            <div class="chatting-area">
                 <!-- header dell'area chat -->
-                <div class="area-header bordered px-1">
+                <div class="area-header px-1">
                     <div class="user-info d-flex align-items-center">
-                        <img src="assets/img/avatar_1.jpg" alt="Michele's Pic" class="rounded-circle">
+                        <img src="assets/img/avatar_1.jpg" alt="Michele's Pic">
                         <div class="name-access">
                             <p>Michele</p>
                             <p class="dark-grey">Ultimo accesso oggi alle</p>

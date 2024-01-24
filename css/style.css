@@ -17,6 +17,7 @@ img {
     max-height: 100%;
     max-width: 100%;
     display: block;
+    border-radius: 50%;
 }
 
 p {
@@ -24,7 +25,8 @@ p {
     font-weight: 500;
 }
 
-p.dark-grey {
+p.dark-grey,
+input.dark-grey {
     font-size: 0.8rem;
 }
 
@@ -75,7 +77,6 @@ main {
 /* # contacts area */
 .contacts-area {
     width: 35%;
-    background-color: red;
 }
 
 .user-info {
@@ -109,11 +110,26 @@ main {
 
 .searchbar-chat {
     height: 8%;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 }
 
+/* area contatti */
 .contacts {
     height: 70%;
     overflow-y: scroll;
+    background-color: white;
+}
+
+.contact-card {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    gap: 1rem ;
 }
 
 /* # chats area */
