@@ -90,6 +90,7 @@ main {
     padding: 0.3rem;
 }
 
+/* notifiche desktop */
 .desktop-notifications {
     height: 12%;
     background-color: #8EDAFC;
@@ -112,6 +113,7 @@ main {
     font-size: 1.2rem;
 }
 
+/* barra di ricerca per le chat */
 .searchbar-chat {
     height: 8%;
     background-color: #fafafa;
@@ -141,12 +143,14 @@ main {
     width: 65%;
 }
 
+/* finestra con chat */
 .chat-window {
     height: 80%;
     overflow-y: scroll;
     background-image: url("../assets/img/mine.jpg");
 }
 
+/* input per scrivere messaggi */
 .chat-input-area {
     height: 10%;
     display: flex;
