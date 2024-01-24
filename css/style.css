@@ -1,4 +1,8 @@
-/* generics */
+/* *generics */
+:root {
+    --dark-grey: #999EA1;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +14,47 @@
 }
 
 img {
+    max-height: 100%;
     max-width: 100%;
     display: block;
 }
 
-/* utils */
+p {
+    margin: 0;
+    font-weight: 500;
+}
+
+p.dark-grey {
+    font-size: 0.8rem;
+}
+
+/* *utils */
 .bordered {
     border: 2px dashed white;
+}
+
+.dark-grey {
+    color: var(--dark-grey);
 }
 
 /* areas headers */
 .area-header {
     height: 10%;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
 }
 
+.icons-set {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    color: var(--dark-grey);
+    font-size: 1.4rem;
+}
+
+/* *svolgimento */
 /* sfondo */
 #root {
     height: 100vh;
@@ -41,10 +72,15 @@ main {
     align-items: stretch;
 }
 
-/* contacts area */
+/* # contacts area */
 .contacts-area {
-    width: 30%;
+    width: 35%;
     background-color: red;
+}
+
+.user-info {
+    gap: 0.5rem;
+    padding: 0.3rem;
 }
 
 .desktop-notifications {
@@ -60,9 +96,9 @@ main {
     overflow-y: scroll;
 }
 
-/* chats area */
+/* # chats area */
 .chatting-area {
-    width: 70%;
+    width: 65%;
     background-color: blue;
 }
 
