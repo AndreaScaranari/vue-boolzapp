@@ -30,6 +30,10 @@ input.dark-grey {
     font-size: 0.8rem;
 }
 
+i {
+    cursor: pointer;
+}
+
 /* *utils */
 .bordered {
     border: 2px dashed white;
@@ -135,14 +139,28 @@ main {
 /* # chats area */
 .chatting-area {
     width: 65%;
-    background-color: blue;
 }
 
 .chat-window {
     height: 80%;
     overflow-y: scroll;
+    background-image: url("../assets/img/mine.jpg");
 }
 
 .chat-input-area {
     height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #EAEAEA;
+}
+
+.chat-input-area > input {
+    width: 80%;
+    height: 60%;
+}
+
+.chat-input-area > i {
+    color: var(--dark-grey);
+    font-size: 1.4rem;
 }
