@@ -79,12 +79,32 @@ main {
 }
 
 .user-info {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
     padding: 0.3rem;
 }
 
 .desktop-notifications {
     height: 12%;
+    background-color: #8EDAFC;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+}
+
+.desktop-notifications .dark-grey {
+    text-decoration: underline;
+}
+
+.fa-bell-slash {
+    background-color: white;
+    border-radius: 50%;
+    color: #8EDAFC;
+    padding: 1rem 0.8rem;
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
 }
 
 .searchbar-chat {
