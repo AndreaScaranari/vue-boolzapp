@@ -16,6 +16,9 @@
     <!-- my css -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <!-- my js -->
     <script src="js/data.js"></script>
     <script defer src="js/script.js"></script>
@@ -28,8 +31,8 @@
                 <!-- header dell'area contatti -->
                 <div class="area-header">
                     <div class="user-info">
-                        <img src="assets/img/avatar_io.jpg" alt="User Pic">
-                        <p>Nome Utente</p>
+                        <img :src="`assets/img/avatar${data.user.avatar}.jpg`" :alt="`${data.user.name}\'s Pic`" :title="`${data.user.name}\'s Pic`">
+                        <p>{{data.user.name}}</p>
                     </div>
                     <div class="icons-set">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -56,31 +59,10 @@
                 </div>
                 <!-- elenco contatti con imgs -->
                 <div class="contacts">
-                    <div class="contact-card d-flex">
-                        <img src="assets/img/avatar_1.jpg" alt="Contact's Pic">
+                    <div class="contact-card d-flex" v-for="contact in data.contacts" :key="contact.id">
+                        <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}\'s Pic`" :title="`${contact.name}\'s Pic`">
                         <div>
-                            <p class="contact-name">Contact Name</p>
-                            <p class="dark-grey">Last time online</p>
-                        </div>
-                    </div>
-                    <div class="contact-card d-flex">
-                        <img src="assets/img/avatar_2.jpg" alt="Contact's Pic">
-                        <div>
-                            <p class="contact-name">Contact Name</p>
-                            <p class="dark-grey">Last time online</p>
-                        </div>
-                    </div>
-                    <div class="contact-card d-flex">
-                        <img src="assets/img/avatar_3.jpg" alt="Contact's Pic">
-                        <div>
-                            <p class="contact-name">Contact Name</p>
-                            <p class="dark-grey">Last time online</p>
-                        </div>
-                    </div>
-                    <div class="contact-card d-flex">
-                        <img src="assets/img/avatar_4.jpg" alt="Contact's Pic">
-                        <div>
-                            <p class="contact-name">Contact Name</p>
+                            <p class="contact-name">{{contact.name}}</p>
                             <p class="dark-grey">Last time online</p>
                         </div>
                     </div>
@@ -89,7 +71,7 @@
             <div class="chatting-area">
                 <!-- header dell'area chat -->
                 <div class="area-header px-1">
-                    <div class="user-info d-flex align-items-center">
+                    <div class="user-info">
                         <img src="assets/img/avatar_1.jpg" alt="Michele's Pic">
                         <div class="name-access">
                             <p>Michele</p>
