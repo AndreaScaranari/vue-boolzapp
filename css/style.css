@@ -148,6 +148,33 @@ main {
     height: 80%;
     overflow-y: scroll;
     background-image: url("../assets/img/mine.jpg");
+    padding: 2rem 3rem;
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    width: 40%;
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.chat-message .dark-grey {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.2rem;
+    font-size: 0.6rem;
+}
+
+.sent {
+    background-color: #D5F9BA;
+    align-self: flex-end
+}
+
+.received {
+    background-color: #FFFFFF;
 }
 
 /* input per scrivere messaggi */
