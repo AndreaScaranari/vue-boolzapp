@@ -94,7 +94,7 @@
                 <!-- area di input del testo per scrivere nelle chat    -->
                 <div class="chat-input-area">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" class="form-control dark-grey" placeholder="Scrivi un messaggio..." aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control dark-grey" placeholder="Scrivi un messaggio..." aria-label="Username" aria-describedby="basic-addon1" v-model="newMessage" @keyup.enter="sendMessage()">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
