@@ -22,7 +22,6 @@ const app = createApp({
   methods: {
     setCurrentActiveID(id) {
       this.activeContactID = id;
-      console.log(this.activeContactID);
     }
   }
 })
