@@ -12,10 +12,11 @@ const app = createApp({
     user,
   }),
   computed: {
-    currentActiveID(){
-      const currentActiveContact = this.contacts.find(contact => {
-        return contact.id === this.activeContactID;
-      });
+    currentContact(){
+      const currentContact = this.contacts.find(contact => {
+        if (contact.id === this.activeContactID) return contact;
+      }); 
+      return currentContact;
     }
   },
   methods: {

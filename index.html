@@ -72,9 +72,9 @@
                 <!-- header dell'area chat -->
                 <div class="area-header px-1">
                     <div class="user-info">
-                        <img src="assets/img/avatar_1.jpg" alt="Michele's Pic">
+                        <img :src="`assets/img/avatar${currentContact.avatar}.jpg`" :alt="`${currentContact.name}'s Pic`" :title="`${currentContact.name}'s Pic`">
                         <div class="name-access">
-                            <p>Michele</p>
+                            <p>{{currentContact.name}}</p>
                             <p class="dark-grey">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
