@@ -163,6 +163,15 @@ main {
     width: 65%;
 }
 
+/* searchbar messaggi a comparsa */
+.searchbar-msgs {
+    position: absolute;
+    right: 16px;
+    top: 80%;
+    width: 50%;
+    z-index: 1;
+}
+
 /* finestra con chat */
 .chat-window {
     height: 80%;

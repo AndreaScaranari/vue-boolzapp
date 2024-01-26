@@ -72,23 +72,30 @@
             </div>
             <div class="chatting-area">
                 <!-- header dell'area chat -->
-                <div class="area-header px-1">
+                <div class="area-header px-1 position-relative">
                     <div class="user-info">
                         <img :src="`assets/img/avatar${currentContact.avatar}.jpg`" :alt="`${currentContact.name}'s Pic`" :title="`${currentContact.name}'s Pic`">
                         <div class="name-access">
                             <p>{{currentContact.name}}</p>
-                            <p class="dark-grey">Ultimo accesso oggi alle</p>
+                            <p class="dark-grey">Ultimo accesso oggi alle {{currentContact.messages[currentContact.messages.length-1].date}}</p>
                         </div>
                     </div>
                     <div class="icons-set">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass" @click="showHideSBMsgs()"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <!-- searchbar messaggi -->
+                    <div class="input-group searchbar-msgs" v-show="showSearchBarMsgs">
+                        <input type="text" class="form-control dark-grey" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="searchMsgs">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-x dark-grey" @click="showHideSBMsgs()"></i>
+                        </span>
                     </div>
                 </div>
                 <!-- finestra dove vengono visualizzate le chat -->
                 <div class="chat-window">
-                    <div v-for="message in currentContact.messages" :class="`chat-message ${message.status}`">
+                    <div v-for="message in filteredMessages" :class="`chat-message ${message.status}`">
                         <p>{{message.text}}</p>
                         <p class="dark-grey">{{message.date}}</p>
                         <i class="fa-solid fa-chevron-down dropdown" @click="showDMenu(message.id)"></i>
@@ -97,6 +104,7 @@
                             <li @click="deleteMessage(message.id)">Delete message</li>
                         </ul>
                     </div>
+                    <div class="no-contacts" v-show="!filteredMessages.length">Non ci sono messaggi con questa combinazione di caratteri nel testo!</div>
                 </div> 
                 <!-- area di input del testo per scrivere nelle chat -->
                 <div class="chat-input-area">

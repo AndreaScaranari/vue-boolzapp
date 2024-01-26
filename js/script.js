@@ -13,6 +13,8 @@ const app = createApp({
     newMessage: "",
     autoAnswerTiming: null,
     searchText: "",
+    showSearchBarMsgs: false,
+    searchMsgs: ""
   }),
   computed: {
     currentContact(){
@@ -22,8 +24,15 @@ const app = createApp({
       const searchTerm = this.searchText.toLowerCase();
 
       return this.contacts.filter(contact =>
-          contact.name.toLowerCase().includes(searchTerm)
+        contact.name.toLowerCase().includes(searchTerm)
       );
+    },
+    filteredMessages(){
+      const searchTerm =this.searchMsgs.toLowerCase();
+      const currentMessages = this.currentContact.messages;
+      return currentMessages.filter(message => 
+        message.text.toLowerCase().includes(searchTerm)
+        );
     }
   },
   methods: {
@@ -71,6 +80,10 @@ const app = createApp({
     deleteMessage(id){
       this.currentContact.messages = this.currentContact.messages.filter(
         message => id !== message.id)
+    },
+    showHideSBMsgs(){
+      this.showSearchBarMsgs = !this.showSearchBarMsgs;
+      this.searchMsgs = "";
     }
   },
   created() {
