@@ -90,6 +90,11 @@
                     <div v-for="message in currentContact.messages" :class="`chat-message ${message.status}`">
                         <p>{{message.text}}</p>
                         <p class="dark-grey">{{message.date}}</p>
+                        <i class="fa-solid fa-chevron-down dropdown" @click="showDMenu(message.id)"></i>
+                        <ul :class="`delete-menu${message.id} d-none`">
+                            <li>Message info</li>
+                            <li>Delete message</li>
+                        </ul>
                     </div>
                 </div> 
                 <!-- area di input del testo per scrivere nelle chat -->

@@ -32,14 +32,19 @@ const app = createApp({
     },
     getSendingTiming() {
       const date = new Date();
-      const day = String(date.getDate()).padStart(2, "0");
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const year = String(date.getFullYear());
-      const hour = String(date.getHours()).padStart(2, "0");
-      const minutes = String(date.getMinutes()).padStart(2, "0");
-      const seconds = String(date.getSeconds()).padStart(2, "0");
-  
+
+      const day = this.padDate(date.getDay())
+      const month = this.padDate(date.getMonth() + 1);
+      const year = date.getFullYear();
+      const hour = this.padDate(date.getHours())
+      const minutes = this.padDate(date.getMinutes())
+      const seconds = this.padDate(date.getSeconds())
+      
       return currentDate = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`
+      // return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
+    },
+    padDate(dateInfo){
+      return String(dateInfo).padStart(2, "0");
     },
     prepareMessage(text, status) {
       this.currentContact.messages.push({
@@ -58,6 +63,10 @@ const app = createApp({
       this.autoAnswerTiming = setTimeout(() => {
         this.prepareMessage("Ok!", "received");
       }, 1000);
+    },
+    showDMenu(id) {
+      const deleteMenu = document.querySelector(`.delete-menu${id}`);
+      deleteMenu.classList.toggle("d-none");
     }
   },
   created() {
