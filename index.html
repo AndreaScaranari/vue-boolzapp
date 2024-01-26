@@ -92,10 +92,10 @@
                         <p class="dark-grey">{{message.date}}</p>
                     </div>
                 </div> 
-                <!-- area di input del testo per scrivere nelle chat    -->
+                <!-- area di input del testo per scrivere nelle chat -->
                 <div class="chat-input-area">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" class="form-control dark-grey" placeholder="Scrivi un messaggio..." aria-label="Username" aria-describedby="basic-addon1" v-model="newMessage" @keyup.enter="sendMessage(); getOKAnswer()">
+                    <input type="text" class="form-control dark-grey" placeholder="Scrivi un messaggio..." aria-label="Username" aria-describedby="basic-addon1" v-model.trim="newMessage" @keyup.enter="sendMessage();">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
