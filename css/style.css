@@ -143,6 +143,14 @@ main {
     background-color: #f5f5f5;
 }
 
+.no-contacts {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background-color: #DC3545;
+    color: white;
+    font-weight: 600;
+}
+
 /* # chats area */
 .chatting-area {
     width: 65%;

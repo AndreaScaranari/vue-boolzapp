@@ -26,6 +26,7 @@ const app = createApp({
     user,
     newMessage: "",
     autoAnswerTiming: null,
+    searchText: "",
   }),
   computed: {
     currentContact(){
@@ -34,19 +35,27 @@ const app = createApp({
       }); 
       return currentContact;
     },
+    filteredContacts(){
+      const searchTerm = this.searchText.toLowerCase();
+
+      return this.contacts.filter(contact =>
+          contact.name.toLowerCase().includes(searchTerm)
+      );
+    }
   },
   methods: {
     setCurrentActiveID(id) {
       this.activeContactID = id;
     },
     sendMessage() {
+      if (this.newMessage){
       this.currentContact.messages.push({
         id: this.currentContact["messages"].length+1,
         date: getSendingTiming(),
         text: this.newMessage,
         status: 'sent'
       })
-      this.newMessage = "";
+      this.newMessage = "";}
     },
     getOKAnswer(){
       this.autoAnswerTiming = setTimeout(() => {

@@ -54,18 +54,19 @@
                         <span class="input-group-text">
                             <i class="fa-solid fa-magnifying-glass dark-grey"></i>
                         </span>
-                        <input type="text" class="form-control dark-grey" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control dark-grey" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="searchText">
                     </div>
                 </div>
                 <!-- elenco contatti con imgs -->
                 <div class="contacts">
-                    <div class="contact-card d-flex" v-for="contact in contacts" :key="contact.id" @click="setCurrentActiveID(contact.id)">
+                    <div class="contact-card d-flex" v-for="contact in filteredContacts" :key="contact.id" @click="setCurrentActiveID(contact.id)">
                         <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}\'s Pic`" :title="`${contact.name}\'s Pic`">
                         <div>
                             <p class="contact-name">{{contact.name}}</p>
                             <p class="dark-grey">Last time online</p>
                         </div>
                     </div>
+                    <div class="no-contacts" v-show="!filteredContacts.length">Non ci sono contatti con questa combinazione di caratteri nel nome!</div>
                 </div>
             </div>
             <div class="chatting-area">
