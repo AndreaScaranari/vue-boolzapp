@@ -93,7 +93,7 @@
                         <i class="fa-solid fa-chevron-down dropdown" @click="showDMenu(message.id)"></i>
                         <ul :class="`delete-menu${message.id} d-none`">
                             <li>Message info</li>
-                            <li>Delete message</li>
+                            <li @click="deleteMessage(message.id)">Delete message</li>
                         </ul>
                     </div>
                 </div> 

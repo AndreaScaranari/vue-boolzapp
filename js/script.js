@@ -67,6 +67,10 @@ const app = createApp({
     showDMenu(id) {
       const deleteMenu = document.querySelector(`.delete-menu${id}`);
       deleteMenu.classList.toggle("d-none");
+    },
+    deleteMessage(id){
+      this.currentContact.messages = this.currentContact.messages.filter(
+        message => id !== message.id)
     }
   },
   created() {
